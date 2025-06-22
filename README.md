@@ -15,7 +15,6 @@ This project demonstrates a simple ETL (Extract, Transform, Load) pipeline that 
 - Transform data by cleaning null values and normalizing email addresses
 - Load data into SQL Server tables (`customers` and `sales`)
 - Uses Windows Authentication for secure database connection
-- Easily extensible and automatable
 
 ---
 
@@ -34,8 +33,8 @@ This project demonstrates a simple ETL (Extract, Transform, Load) pipeline that 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/csv-to-sqlserver-etl.git
-cd csv-to-sqlserver-etl
+git clone https://github.com/AbdelhamidSaidi/csv2sql
+cd csv2sql
 ```
 
 
