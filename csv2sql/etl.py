@@ -46,10 +46,10 @@ def run_etl():
         load_to_sql(df_sales, 'sales', conn)
 
         conn.close()
-        print("✅ ETL completed successfully.")
+        print(" ETL completed successfully.")
 
     except Exception as e:
-        print("❌ ETL failed:", e)
+        print(" ETL failed:", e)
 
 if __name__ == "__main__":
     run_etl()
