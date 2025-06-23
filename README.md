@@ -1,5 +1,4 @@
-# CSV to SQL Server ETL Pipeline
-
+# CSV to SQL Server 
 ![Python](https://img.shields.io/badge/Python-3.7+-blue?logo=python&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-2022-blue?logo=microsoftsqlserver&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-1.5+-blue)
