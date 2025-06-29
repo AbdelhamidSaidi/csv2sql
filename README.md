@@ -35,7 +35,10 @@ This project demonstrates a simple ETL (Extract, Transform, Load) pipeline that 
 git clone https://github.com/AbdelhamidSaidi/csv2sql
 cd csv2sql
 ```
-
+you should also install the required packages
+```bash
+pip install -r requirements.txt
+```
 
 
 ### 2. Create SQL Server Database and Tables
@@ -106,6 +109,17 @@ You should see:
 ```
  ETL completed successfully.
 ```
+
+# Using Docker
+you can use [docker](https://www.docker.com/) to run this project. First you have to define the environment variable `MS_PASSWORD` inside of your `.env` file (it should be strong, otherwise it won't work), then run the command
+```
+docker compose up
+```
+This will automatically install MS SQL server in a docker container and create the database for you, then you can use the command
+```bash
+python etl.py docker
+```
+to run the script in docker mode
 
 ---
 
