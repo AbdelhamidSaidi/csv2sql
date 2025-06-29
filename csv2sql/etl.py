@@ -1,14 +1,34 @@
 import pandas as pd
 import pyodbc
 from config import DB_CONFIG
+from sys import argv
+from dotenv import dotenv_values
+
+config = dotenv_values()
 
 def get_connection():
-    conn_str = (
-        f"DRIVER={{{DB_CONFIG['driver']}}};"
-        f"SERVER={DB_CONFIG['server']};"
-        f"DATABASE={DB_CONFIG['database']};"
-        f"Trusted_Connection={DB_CONFIG['trusted_connection']};"
-    )
+    if len(argv) == 2:
+        if argv[1] == "docker":
+            print("Docker mode")
+            conn_str = (
+                f"DRIVER={{{DB_CONFIG['driver']}}};"
+                f"SERVER=localhost,1433;"
+                f"DATABASE={DB_CONFIG['database']};"
+                f"UID=SA;"
+                f"PWD={config.get("MS_PASSWORD")};"
+            )
+        else:
+            print("Unknown argument")
+            exit(1)
+    
+    else:
+        conn_str = (
+            f"DRIVER={{{DB_CONFIG['driver']}}};"
+            f"SERVER={DB_CONFIG['server']};"
+            f"DATABASE={DB_CONFIG['database']};"
+            f"Trusted_Connection={DB_CONFIG['trusted_connection']};"
+        )
+    
     return pyodbc.connect(conn_str)
 
 def load_to_sql(df, table_name, conn):
