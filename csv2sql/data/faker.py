@@ -35,4 +35,4 @@ if __name__ == "__main__":
     customers_df.to_csv('data/customers.csv', index=False)
     sales_df.to_csv('data/sales.csv', index=False)
     
-    print("✅ Generated customers.csv and sales.csv with large data!")
+    print("Generated customers.csv and sales.csv with large data!")
