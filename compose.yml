@@ -1,0 +1,21 @@
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      # the password must be strong, otherwise the app wouldn't run correctly
+      - SA_PASSWORD=${MS_PASSWORD}
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./csv2sql/SQLQuery1.sql:/usr/src/app/SQLQuery1.sql
+    user: root
+    working_dir: /usr/src/app
+    command: >
+      /bin/bash -c "
+      /opt/mssql/bin/sqlservr &
+      sleep 30 &&
+      /opt/mssql-tools18/bin/sqlcmd -S localhost -U SA -P \"$$SA_PASSWORD\" -i /usr/src/app/SQLQuery1.sql -C -C -C &&
+      while true; do sleep 1000; done
+      "
