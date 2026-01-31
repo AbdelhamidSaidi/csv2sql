@@ -5,6 +5,8 @@
 ![pyodbc](https://img.shields.io/badge/pyodbc-4.0+-green)
 
 This project demonstrates a simple ETL (Extract, Transform, Load) pipeline that reads data from CSV files, cleans and transforms it using Python, and loads it into a SQL Server database.
+<img width="1001" height="472" alt="image" src="https://github.com/user-attachments/assets/ec2e5c36-3c18-4f6e-92ee-15f7ba5b3281" />
+
 
 ---
 
