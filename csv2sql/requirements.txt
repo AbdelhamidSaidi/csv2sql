@@ -1,2 +1,3 @@
-pyodbc
-python-dotenv
+pandas>=1.5
+python-dotenv>=0.21.0
+pyodbc>=4.0
